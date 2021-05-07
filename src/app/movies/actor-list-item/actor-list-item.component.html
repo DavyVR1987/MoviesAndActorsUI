@@ -1,0 +1,7 @@
+<li class="movie-list-item">
+  <span class="actor-list-item-name">
+      {{actor.firstName}} {{actor.lastName}}
+      <button [routerLink]="['/actor-detail', actor.id]" class="btn btn-success">Edit actor</button>
+    </span>
+  <span class="actor-list-item-birthdate">{{actor.birthDate | date}}</span>
+</li>

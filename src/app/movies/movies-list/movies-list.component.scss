@@ -1,0 +1,15 @@
+.movie-list .title {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #E9EAEB;
+  font-size: 28px;
+  text-align: center;
+}
+
+.movie-list ul {
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

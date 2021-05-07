@@ -1,0 +1,27 @@
+<div class="movie-list-item-details-container">
+  <h1>{{(movie$ | async)?.name}}</h1>
+  <div class="movie-list-item-bio">
+    <img src="assets/images/{{(movie$ | async)?.name}}.jpg" width="200px" />
+    <div class="details">
+      <div class="details-top">
+        <div class="release-year">{{(movie$ | async)?.year | date}}</div>
+        <div class="genre">{{movieGenre[(movie$ | async)?.genre]}}</div>
+      </div>
+      <div>
+        <div>
+          <h4>Actors</h4>&nbsp;<button type="button" class="btn btn-primary" [routerLink]="['/actor-new']">Add new actor</button>
+        </div>
+        <ul *ngFor="let actor of (movie$ | async)?.actors">
+          <app-actor-list-item [actor]="actor"></app-actor-list-item>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="navigation">
+    <button type="button" class="btn btn-light" [routerLink]="['/movies']">Back</button>
+    <span>&nbsp;</span>
+    <button type="button" class="btn btn-success" [routerLink]="['/movie-edit/', (movie$ | async)?.id]">Edit</button>
+    <span>&nbsp;</span>
+    <button type="button" class="btn btn-danger" (click)="deleteClicked()">Delete</button>
+  </div>
+</div>

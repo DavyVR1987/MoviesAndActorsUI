@@ -1,0 +1,50 @@
+li {
+  width: 220px;
+  height: auto;
+  overflow: hidden;
+  list-style: none;
+  color: #E9EAEB;
+  float: left;
+  position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 15px;
+
+  img {
+    width: 200px;
+    height: 305px;
+    margin-bottom: 15px;
+  }
+
+  div {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    line-height: 48px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #F48F26;
+    display: inline-block;
+    position: absolute;
+    bottom: 97px;
+    right: 2px;
+  }
+
+  .movie-list-item-title {
+    display: block;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .movie-list-item-release-year {
+    display: block;
+    font-size: 14px;
+    color: #8a9195;
+  }
+
+  .movie-list-item-genre {
+    display: block;
+    font-size: 14px;
+    color: #8a9195;
+  }
+}

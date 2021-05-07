@@ -1,0 +1,15 @@
+<div class="movie-list">
+  <h1 class="title">Movie list</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <ul *ngFor="let movie of movies$ | async">
+          <app-movie-list-item [movie]="movie"></app-movie-list-item>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn btn-success" [routerLink]="['/movie-new']">Add new movie</button>
+    </div>
+  </div>
+</div>

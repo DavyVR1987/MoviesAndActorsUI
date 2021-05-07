@@ -1,0 +1,7 @@
+<li class="movie-list-item">
+  <img src="assets/images/{{movie.name}}.jpg" width="200px" />
+  <span class="movie-list-item-title">{{movie.name}}</span>
+  <span class="movie-list-item-release-year">{{movie.year | date}}</span>
+  <span class="movie-list-item-genre">{{genre}}</span>
+  <button class="btn btn-info" [routerLink]="['/movie-detail/', movie.id]">Details</button>
+</li>

@@ -1,0 +1,36 @@
+<div class="container" *ngIf="(movieObject$ | async) as movie">
+  <h1>Add or edit a movie</h1>
+  <form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)" novalidate>
+    <input type="hidden" [(ngModel)]="movie.id" name="id">
+    <div class="form-group row col-sm-4">
+      <label for="name">Movie name</label>
+      <input type="text" class="form-control" id="name" name="name" required />
+      <!--<span *ngIf="actorForm.form.controls.firstName?.invalid" class="alert alert-danger">
+        Required field
+      </span>-->
+    </div>
+    <div class="form-group row col-sm-4">
+      <label for="year">Year</label>
+      <input type="text" class="form-control" id="year" name="year" required />
+      <!--<span *ngIf="actorForm.form.controls.lastName?.invalid" class="alert alert-danger">
+        Required field
+      </span>-->
+    </div>
+    <div class="form-group row col-sm-4">
+      <label for="genre">Genre of the movie</label>
+      <select class="form-control" name="genre" [(ngModel)]="movie.genre" id="genre">
+        <option *ngFor="let genre of movieGenres | genrePipe" [value]="genre.key">
+          {{genre.value}}
+        </option>
+      </select>
+      <!--<span *ngIf="actorForm.form.controls.birthDate?.invalid" class="alert alert-danger">
+        Required field
+      </span>-->
+    </div>
+    <div class="form-group row col-sm-5">
+      <button class="btn btn-light" (click)="backClicked()">Back</button>
+      <span>&nbsp;</span>
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </form>
+</div>
