@@ -10,6 +10,10 @@ export class ActorService {
 
   constructor(private HttpClient: HttpClient) { }
 
+  public getAll(): Observable<Actor[]> {
+    return this.HttpClient.get<Actor[]>('https://localhost:44341/api/Actors');
+  }
+
   public getById(id: string): Observable<Actor> {
     return this.HttpClient.get<Actor>('https://localhost:44341/api/Actors/'+ id);
   }

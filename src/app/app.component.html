@@ -4,6 +4,16 @@
       <div class="navbar-brand logo">
         <img src="assets/images/Logo.jpg" />
       </div>
+      <div class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/movies']">Movie list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/actors']">Actor list</a>
+          </li>
+        </ul>
+      </div>
       <div class="navbar-nav ml-auto">
         <div *ngIf="(authService.isAuthenticated$ | async)">
           <span *ngIf="(authService.user$ | async) as user">

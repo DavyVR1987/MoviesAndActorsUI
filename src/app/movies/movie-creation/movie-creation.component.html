@@ -4,14 +4,14 @@
     <input type="hidden" [(ngModel)]="movie.id" name="id">
     <div class="form-group row col-sm-4">
       <label for="name">Movie name</label>
-      <input type="text" class="form-control" id="name" name="name" required />
+      <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="movie.name"/>
       <!--<span *ngIf="actorForm.form.controls.firstName?.invalid" class="alert alert-danger">
         Required field
       </span>-->
     </div>
     <div class="form-group row col-sm-4">
       <label for="year">Year</label>
-      <input type="text" class="form-control" id="year" name="year" required />
+      <input type="text" class="form-control" id="year" name="year" required [ngModel]="movie.year | date:'dd/MM/yyyy'"/>
       <!--<span *ngIf="actorForm.form.controls.lastName?.invalid" class="alert alert-danger">
         Required field
       </span>-->
@@ -26,6 +26,11 @@
       <!--<span *ngIf="actorForm.form.controls.birthDate?.invalid" class="alert alert-danger">
         Required field
       </span>-->
+    </div>
+    <div class="form-group row col-sm-12">
+      <label *ngFor="let actor of actors$ | async">
+        <input type="checkbox" name="actor" [(ngModel)]="actor.id" id="actor"> {{actor.firstName}} {{actor.lastName}}
+      </label>
     </div>
     <div class="form-group row col-sm-5">
       <button class="btn btn-light" (click)="backClicked()">Back</button>

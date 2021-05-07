@@ -26,6 +26,11 @@ export class MovieService {
 
   public editMovie(id:number, movieObject: Movie) {
     const body = movieObject;
-    return this.HttpClient.post<any>('https://localhost:44341/api/Movies/' + id, body)
+    return this.HttpClient.post<any>('https://localhost:44341/api/Movies/' + id, body);
+  }
+
+  public addMovie(movieObject: Movie) {
+    const body = movieObject;
+    return this.HttpClient.post<any>('https://localhost:44341/api/Movies', body);
   }
 }
